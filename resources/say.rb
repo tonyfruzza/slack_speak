@@ -4,22 +4,6 @@ property :message, String, required: true
 default_action :say
 
 action :say do
-  # The value should look similar to:
-  # https://hooks.slack.com/services/XXXXX/XXXXX/XXXXXXXXXXXXXXXXX
-  # Created through Custom Integration Incoming WebHOoks https://YOUR_ORG_NAME.slack.com/services/
-  # This requires an IAM policy which can read the the parameter store value like:
-  #   {
-  #     "Version": "2012-10-17",
-  #     "Statement": [
-  #         {
-  #             "Effect": "Allow",
-  #             "Action": [
-  #                 "ssm:GetParameter"
-  #             ],
-  #             "Resource": "*"
-  #         }
-  #     ]
-  # }
   aws_ssm_parameter_store 'get_slack_api_key' do
     name node['slack_speak']['ssm_parameter_store_hook_url']
     return_key 'slack_hook_url'
