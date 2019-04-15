@@ -7,6 +7,6 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 source_url 'https://github.com/tonyfruzza/slack_speak'
 issues_url 'https://github.com/tonyfruzza/slack_speak/issues'
 supports 'amazon'
-version '0.1.9'
+version '0.1.10'
 
-depends 'aws', '~> 7.3'
+depends 'aws', '~> 8.0.3'
